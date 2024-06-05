@@ -2,40 +2,38 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>MiMi</title>
+    <title>图片展示</title>
     <style>
-        .image-container {
+        .gallery {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            gap: 20 px; /* 调整图片之间的间距 */
+            flex-wrap: wrap;
+            gap: 10 px; /* 调整图片之间的间距 */
         }
-        .image-wrapper {
-            text-align: center; /* 文字居中 */
+        .gallery img {
+            width: 200 px; /* 默认图片宽度 */
+            height: auto; /* 高度自适应保持图片比例 */
+            transition: transform 0.3s ease; /* 平滑缩放效果 */
         }
-        .image-wrapper img {
-            width: 200 px; /* 图片宽度 */
-            height: auto; /* 图片高度自适应 */
+        .gallery img:hover {
+            transform: scale (1.1); /* 鼠标悬浮时图片放大 */
         }
-        .image-description {
-            font-size: 16 px; /* 描述文字大小 */
-            margin-top: 10 px; /* 描述文字与图片的间距 */
-        }
+        /* 你可以为每张图片添加特定的类或ID，并单独设置样式 */
+        /* 例如： */
+        /* #image1 {
+            width: 300px;
+            margin-left: 50px;
+        } */
     </style>
 </head>
 <body>
-    <div class="image-container">
-        <!-- 重复的图片和描述块 -->
-        <div class="image-wrapper">
-            <img src="image1.jpg" alt="图片1描述">
-            <p class="image-description">这是图片1的描述文字。</p>
-        </div>
+    <div class="gallery">
+        <!-- 图片列表，替换为你的图片路径 -->
+        <img src="" alt="图片1">
+        <img src="image2.jpg" alt="图片2">
         <!-- 继续添加其他图片 -->
         <!-- ... -->
-        <div class="image-wrapper">
-            <img src="image10.jpg" alt="图片10描述">
-            <p class="image-description">这是图片10的描述文字。</p>
-        </div>
+        <img src="image10.jpg" alt="图片10">
     </div>
 </body>
 </html>
