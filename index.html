@@ -9,21 +9,21 @@
             justify-content: center;
             flex-wrap: wrap;
             gap: 10 px; /* 调整图片之间的间距 */
+            margin: 0; /* 移除容器的外边距 */
+            padding: 0; /* 移除容器的内边距 */
+            width: 100 %; /* 设置容器宽度为100% */
         }
         .gallery img {
-            width: 500 px; /* 默认图片宽度 */
+            width: 100 %; /* 设置图片宽度为100% */
             height: auto; /* 高度自适应保持图片比例 */
             transition: transform 0.3 s ease; /* 平滑缩放效果 */
+            margin: 0; /* 移除图片的外边距，确保没有空隙 */
+            padding: 0; /* 移除图片的内边距 */
+            box-sizing: border-box; /* 边框计算在宽度内 */
         }
         .gallery img:hover {
             transform: scale (1.1); /* 鼠标悬浮时图片放大 */
         }
-        /* 你可以为每张图片添加特定的类或ID，并单独设置样式 */
-        /* 例如： */
-        /* #image1 {
-            width: 300px;
-            margin-left: 50px;
-        } */
     </style>
 </head>
 <body>
