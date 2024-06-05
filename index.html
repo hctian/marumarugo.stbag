@@ -2,15 +2,40 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>图片展示</title>
+    <title>MiMi</title>
+    <style>
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20 px; /* 调整图片之间的间距 */
+        }
+        .image-wrapper {
+            text-align: center; /* 文字居中 */
+        }
+        .image-wrapper img {
+            width: 200 px; /* 图片宽度 */
+            height: auto; /* 图片高度自适应 */
+        }
+        .image-description {
+            font-size: 16 px; /* 描述文字大小 */
+            margin-top: 10 px; /* 描述文字与图片的间距 */
+        }
+    </style>
 </head>
 <body>
-    <!-- 图片和文字 -->
-    <div>
-        <!-- 这里src属性需要替换为你的图片地址 -->
-        <img src="./宠物1.jpg" alt="描述文字" style="width: 500 px; height: auto;">
-        <p>休闲包</p>
+    <div class="image-container">
+        <!-- 重复的图片和描述块 -->
+        <div class="image-wrapper">
+            <img src="image1.jpg" alt="图片1描述">
+            <p class="image-description">这是图片1的描述文字。</p>
+        </div>
+        <!-- 继续添加其他图片 -->
+        <!-- ... -->
+        <div class="image-wrapper">
+            <img src="image10.jpg" alt="图片10描述">
+            <p class="image-description">这是图片10的描述文字。</p>
+        </div>
     </div>
 </body>
 </html>
-
