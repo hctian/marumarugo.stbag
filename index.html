@@ -2,33 +2,51 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>MiMi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高清图片展示</title>
     <style>
-        .gallery {
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100 %;
+            overflow: hidden;
+        }
+        .container {
+            position: relative;
+            width: 100 %;
+            height: 100 %;
             display: flex;
+            align-items: center;
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 10 px; /* 调整图片之间的间距 */
-            margin: 0; /* 移除容器的外边距 */
-            padding: 0; /* 移除容器的内边距 */
-            width: 100 %; /* 设置容器宽度为100% */
         }
-        .gallery img {
-            width: 100 %; /* 设置图片宽度为100% */
-            height: auto; /* 高度自适应保持图片比例 */
-            transition: transform 0.3 s ease; /* 平滑缩放效果 */
-            margin: 0; /* 移除图片的外边距，确保没有空隙 */
-            padding: 0; /* 移除图片的内边距 */
-            box-sizing: border-box; /* 边框计算在宽度内 */
+        .image-container {
+            position: absolute;
+            width: 100 %;
+            height: 100 %;
+            overflow: hidden;
         }
-        .gallery img:hover {
-            transform: scale (1.1); /* 鼠标悬浮时图片放大 */
+        img {
+            width: 100 %;
+            height: auto;
+            max-width: none; /* 确保图片宽度填满屏幕 */
+            object-fit: cover; /* 确保图片覆盖整个容器 */
+        }
+        /* 简单的图片轮播效果 */
+        @ keyframes slide {
+            0 % { transform: translateX (0); }
+            10 % { transform: translateX (-100 %); }
+            90 % { transform: translateX (-900 %); }
+            100 % { transform: translateX (-1000 %); }
+        }
+        .image-container {
+            animation: slide 30 s infinite;
         }
     </style>
 </head>
 <body>
-    <div class="gallery">
-        <!-- 图片列表，替换为你的图片路径 -->
+    <div class="container">
+        <div class="image-container">
+            <!-- 这里添加10张图片，每张图片的src属性需要替换为实际的图片URL -->
         <img src="./宠物包图片/幻灯片1.PNG" alt="图片1">
         <img src="./宠物包图片/幻灯片2.PNG" alt="图片2">
         <img src="./宠物包图片/幻灯片3.PNG" alt="图片3">
