@@ -4,49 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>うちの子オーダーメイド散歩トートバッグ（切り抜き）</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100 %;
-            overflow: hidden;
-        }
-        .container {
-            position: relative;
-            width: 100 %;
-            height: 100 %;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .image-container {
-            position: absolute;
-            width: 100 %;
-            height: 100 %;
-            overflow: hidden;
-        }
+ <style>
+        /* 确保图片在手机页面上能够适应屏幕宽度 */
         img {
             width: 100 %;
             height: auto;
-            max-width: none; /* 确保图片宽度填满屏幕 */
-            object-fit: cover; /* 确保图片覆盖整个容器 */
+            margin-bottom: 10 px; /* 每张图片下方留一些空间 */
         }
-        /* 简单的图片轮播效果 */
-        @ keyframes slide {
-            0 % { transform: translateX (0); }
-            10 % { transform: translateX (-100 %); }
-            90 % { transform: translateX (-900 %); }
-            100 % { transform: translateX (-1000 %); }
-        }
+        /* 创建一个容器，用于排列图片 */
         .image-container {
-            animation: slide 30 s infinite;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* 居中显示图片 */
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="image-container">
-            <!-- 这里添加10张图片，每张图片的src属性需要替换为实际的图片URL -->
+    <div class="image-container">
+        <!-- 以下是10张图片的示例，你需要替换src属性的值为你的图片链接 -->
         <img src="./宠物包图片/幻灯片1.PNG" alt="图片1">
         <img src="./宠物包图片/幻灯片2.PNG" alt="图片2">
         <img src="./宠物包图片/幻灯片3.PNG" alt="图片3">
