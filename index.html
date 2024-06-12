@@ -3,61 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>产品介绍页面</title>
+    <title>图片画廊</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
             background-color: #f4f4f4;
-        }
-        .container {
-            max-width: 600 px;
-            margin: 0 auto;
             padding: 20 px;
-            background-color: #fff;
-            box-shadow: 0 0 10 px rgba (0,0,0,0.1);
         }
-        .product-info {
-            margin-bottom: 20 px;
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10 px; /* 间距 */
         }
-        .product-info h1 {
-            font-size: 24 px;
-            color: #333;
+        .gallery img {
+            width: calc (33.333 % - 10 px); /* 3张图片一行，减去间距 */
+            height: auto;
+            transition: transform 0.3 s ease;
         }
-        .product-info p {
-            font-size: 16 px;
-            color: #666;
-            line-height: 1.5;
+        .gallery img:hover {
+            transform: scale (1.1); /* 鼠标悬停时放大图片 */
         }
-        .promotion {
-            background-color: #f9f9f9;
-            padding: 10 px;
-            border-left: 3 px solid #ff6700;
-        }
-        .promotion h2 {
-            font-size: 20 px;
-            color: #ff6700;
-        }
-        .promotion p {
-            font-size: 14 px;
-            color: #333;
+        @ media (max-width: 600 px) {
+            .gallery img {
+                width: calc (50 % - 10 px); /* 在小屏幕上，2张图片一行 */
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="product-info">
-            <h1>健康女皮膚 無添加</h1>
-            <p>美L目元在雅持 才一儿 于 荣姜力 于儿一卜</p>
-            <p>100%默医师 無添加食材 96%推奖 世界荣善基</p>
-            <p>自然素材 適合 高夕勺·低脂肪の马肉使用 食物七儿丰一七配 荣养の去去生法 才一于！</p>
-        </div>
-        <div class="promotion">
-            <h2>限时优惠</h2>
-            <p>※12021年11月人少了个调人</p>
-            <p>3种試L七卜500月送料無料 今申</p>
-        </div>
+    <div class="gallery">
+        <!-- 这里添加10张图片的链接，替换src属性中的URL -->
+        <img src="image1.jpg" alt="图片1">
+        <img src="image2.jpg" alt="图片2">
+        <img src="image3.jpg" alt="图片3">
+        <img src="image4.jpg" alt="图片4">
+        <img src="image5.jpg" alt="图片5">
+        <img src="image6.jpg" alt="image6">
+        <img src="image7.jpg" alt="图片7">
+        <img src="image8.jpg" alt="图片8">
+        <img src="image9.jpg" alt="图片9">
+        <img src="image10.jpg" alt="图片10">
     </div>
 </body>
 </html>
