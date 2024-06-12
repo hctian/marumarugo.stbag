@@ -7,17 +7,16 @@
     <style>
         /* 默认样式 */
         img {
-            max-width: 100 %; /* 图片最大宽度为100%，适应其容器宽度 */
+            max-width: 100 %; /* 图片最大宽度为100% */
             height: auto; /* 高度自动调整以保持宽高比 */
             display: block; /* 移除图片的默认边框和间距 */
             margin: 0 auto; /* 居中显示图片 */
         }
 
         /* 媒体查询：针对手机屏幕 */
-        @ media screen and (max-width: 768px) {
+        @ media screen and (max-width: 480px) {
             img {
-                /* 在屏幕宽度小于768px时，设置图片宽度为100% */
-                width: 100 %;
+                width: 100 %; /* 在屏幕宽度小于480px时，设置图片宽度为100% */
             }
         }
     </style>
