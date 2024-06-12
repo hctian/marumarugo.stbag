@@ -2,53 +2,62 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>自适应图片展示</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品介绍页面</title>
     <style>
-        * {
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-        body, html {
-            height: 100 %;
-            overflow-x: hidden; /* 隐藏水平滚动条 */
+            background-color: #f4f4f4;
         }
         .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100 %;
+            max-width: 600 px;
+            margin: 0 auto;
+            padding: 20 px;
+            background-color: #fff;
+            box-shadow: 0 0 10 px rgba (0,0,0,0.1);
         }
-        .image-wrapper {
-            width: 100 %; /* 图片容器宽度占满屏幕 */
-            padding-bottom: 56.25 %; /* 16:9 的宽高比 */
-            position: relative; /* 相对定位 */
+        .product-info {
+            margin-bottom: 20 px;
         }
-        .image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100 %;
-            height: 100 %;
-            object-fit: cover; /* 保持宽高比，背景覆盖 */
+        .product-info h1 {
+            font-size: 24 px;
+            color: #333;
+        }
+        .product-info p {
+            font-size: 16 px;
+            color: #666;
+            line-height: 1.5;
+        }
+        .promotion {
+            background-color: #f9f9f9;
+            padding: 10 px;
+            border-left: 3 px solid #ff6700;
+        }
+        .promotion h2 {
+            font-size: 20 px;
+            color: #ff6700;
+        }
+        .promotion p {
+            font-size: 14 px;
+            color: #333;
         }
     </style>
 </head>
 <body>
-    <div class="image-container">
-        <!-- 以下是10张图片的示例，你需要替换src属性的值为你的图片链接 -->
-        <img src="./宠物包图片/幻灯片1.PNG" alt="图片1">
-        <img src="./宠物包图片/幻灯片2.PNG" alt="图片2">
-        <img src="./宠物包图片/幻灯片3.PNG" alt="图片3">
-        <img src="./宠物包图片/幻灯片4.PNG" alt="图片4">
-        <img src="./宠物包图片/幻灯片5.PNG" alt="图片5">
-        <img src="./宠物包图片/幻灯片6.PNG" alt="图片6">
-        <img src="./宠物包图片/幻灯片7.PNG" alt="图片7">
-        <img src="./宠物包图片/幻灯片8.PNG" alt="图片8">
-        <img src="./宠物包图片/幻灯片9.PNG" alt="图片9">
-        <img src="./宠物包图片/幻灯片10.PNG" alt="图片10">
+    <div class="container">
+        <div class="product-info">
+            <h1>健康女皮膚 無添加</h1>
+            <p>美L目元在雅持 才一儿 于 荣姜力 于儿一卜</p>
+            <p>100%默医师 無添加食材 96%推奖 世界荣善基</p>
+            <p>自然素材 適合 高夕勺·低脂肪の马肉使用 食物七儿丰一七配 荣养の去去生法 才一于！</p>
+        </div>
+        <div class="promotion">
+            <h2>限时优惠</h2>
+            <p>※12021年11月人少了个调人</p>
+            <p>3种試L七卜500月送料無料 今申</p>
+        </div>
     </div>
 </body>
 </html>
