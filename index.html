@@ -2,35 +2,91 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <!-- 设置viewport，initial-scale=1.0确保页面初始缩放为1:1 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>うちの子オーダーメイドトートバッグ（切り抜き）</title>
     <style>
         /* 默认样式 */
-        img, video  {
-            max-width: 100%; /* 图片最大宽度为100% */
-            height: auto; /* 高度自动调整以保持宽高比 */
-            display: block; /* 移除图片的默认边框和间距 */
-            margin: 0 auto; /* 居中显示图片 */
-            object-fit: contain; /* 保持宽高比，图片适应容器 */
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            object-fit: contain;
         }
-
-        /* 媒体查询：针对手机屏幕（768px的断点可以根据您的需求调整） */
+        /* 视频容器样式 */
+        .video-container {
+            position: relative;
+            margin: 0 auto;
+        }
+        /* 封面样式 */
+        .video-container .cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('cover.jpg'); /* 封面图片地址 */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        /* 媒体查询：针对手机屏幕 */
         @media screen and (max-width: 768px) {
             /* 在屏幕宽度小于768px时，图片已经设置为100%，无需额外设置 */
         }
     </style>
 </head>
 <body>
+    <!-- 图片部分 -->
     <img src="./图片1/妈咪包扣图版本-私域链接_v0.3 noline_01.jpg" alt="图片1">
     <img src="./图片1/妈咪包扣图版本-私域链接_v0.3 noline_02.jpg" alt="图片2">
     <img src="./图片1/妈咪包扣图版本-私域链接_v0.3 noline_03.jpg" alt="图片3">
-    <video controls>
-        <source src="视频2.mp4" type="video/mp4">
+    
+    <!-- 视频部分 -->
+    <div class="video-container">
+        <video id="myVideo" controls>
+            <source src="视频2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
         </video>
-    <img src="./图片1/妈咪包扣图版本-私域链接_v0.3 noline_04.jpg" alt="图片4">
-    <img src="./图片1/妈咪包扣图版本-私域链接_v0.3 noline_05.jpg" alt="图片5">
-    <img src="./图片1/妈咪包扣图版本-私域链接_v0.3 noline_06.jpg" alt="图片6">
+        <div class="cover" onclick="playVideo()">播放视频</div>
+    </div>
+
+    <script>
+        // 获取视频元素
+        var video = document.getElementById('myVideo');
+        // 播放视频函数
+        function playVideo() {
+            video.play();
+            // 视频开始播放时，隐藏封面
+            document.querySelector('.cover').style.display = 'none';
+        }
+        // 视频结束时重新显示封面
+        video.addEventListener('ended', function() {
+            document.querySelector('.cover').style.display = 'block';
+        });
+        // 视频关闭函数
+        function stopVideo() {
+            video.pause();
+            video.currentTime = 0;
+            // 视频停止播放时，显示封面
+            document.querySelector('.cover').style.display = 'block';
+        }
+        // 添加关闭按钮
+        var closeButton = document.createElement('button');
+        closeButton.innerText = '关闭视频';
+        closeButton.style.position = 'absolute';
+        closeButton.style.top = '10px';
+        closeButton.style.right = '10px';
+        closeButton.style.zIndex = '10';
+        closeButton.onclick = stopVideo;
+        video.parentNode.insertBefore(closeButton, video);
+    </script>
+     <img src="./图片1/妈咪包扣图版本-私域链接_v0.3 noline_04.jpg" alt="图片4">
+     <img src="./图片1/妈咪包扣图版本-私域链接_v0.3 noline_05.jpg" alt="图片5">
+     <img src="./图片1/妈咪包扣图版本-私域链接_v0.3 noline_06.jpg" alt="图片6">
     <img src="./图片1/妈咪包扣图版本-私域链接_v0.3 noline_07.jpg" alt="图片7">
     <img src="./图片1/妈咪包扣图版本-私域链接_v0.3 noline_08.jpg" alt="图片8">
     <img src="./图片1/妈咪包扣图版本-私域链接_v0.3 noline_09.jpg" alt="图片9">
