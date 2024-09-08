@@ -52,39 +52,9 @@
             <source src="视频1_compressed.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <div class="cover" onclick="playVideo1()">Open</div>
+        <div class="cover" onclick="toggleVideo('myVideo1')">Open</div>
     </div>
 
-    <script>
-        // 获取视频元素1
-        var video1 = document.getElementById('myVideo1');
-        // 播放视频函数1
-        function playVideo1() {
-            video1.play();
-            // 视频开始播放时，隐藏封面
-            document.querySelector('.cover').style.display = 'none';
-        }
-        // 视频结束时重新显示封面1
-        video1.addEventListener('ended', function() {
-            document.querySelector('.cover').style.display = 'block';
-        });
-        // 视频关闭函数1
-        function stopVideo1() {
-            video1.pause();
-            video1.currentTime = 0;
-            // 视频停止播放时，显示封面1
-            document.querySelector('.cover').style.display = 'block';
-        }
-        // 添加关闭按钮1
-        var closeButton1 = document.createElement('button');
-        closeButton1.innerText = 'Close';
-        closeButton1.style.position = 'absolute';
-        closeButton1.style.top = '10px';
-        closeButton1.style.right = '10px';
-        closeButton1.style.zIndex = '10';
-        closeButton1.onclick = stopVideo1;
-        video1.parentNode.insertBefore(closeButton1, video1);
-    </script>
     <!-- 图片部分 -->
     <img src="./stbag/share_ppt_exportpage5.png" alt="图片6">
     <img src="./stbag/share_ppt_exportpage6.png" alt="图片7">
@@ -96,52 +66,70 @@
     <img src="./stbag/share_ppt_exportpage12.png" alt="图片13">
     <img src="./stbag/share_ppt_exportpage13.png" alt="图片14">
     <img src="./stbag/share_ppt_exportpage14.png" alt="图片15">
+
     <!-- 视频部分2 -->
     <div class="video-container">
         <video id="myVideo2" controls>
             <source src="视频2_compressed.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <div class="cover" onclick="playVideo2()">Open</div>
+        <div class="cover" onclick="toggleVideo('myVideo2')">Open</div>
     </div>
 
-    <script>
-        // 获取视频元素2
-        var video2 = document.getElementById('myVideo2');
-        // 播放视频函数2
-        function playVideo2() {
-            video2.play();
-            // 视频开始播放时，隐藏封面
-            document.querySelector('.cover').style.display = 'none';
-        }
-        // 视频结束时重新显示封面2
-        video2.addEventListener('ended', function() {
-            document.querySelector('.cover').style.display = 'block';
-        });
-        // 视频关闭函数2
-        function stopVideo2() {
-            video2.pause();
-            video2.currentTime = 0;
-            // 视频停止播放时，显示封面2
-            document.querySelector('.cover').style.display = 'block';
-        }
-        // 添加关闭按钮2
-        var closeButton2 = document.createElement('button');
-        closeButton2.innerText = 'Close';
-        closeButton2.style.position = 'absolute';
-        closeButton2.style.top = '10px';
-        closeButton2.style.right = '10px';
-        closeButton2.style.zIndex = '10';
-        closeButton2.onclick = stopVideo2;
-        video2.parentNode.insertBefore(closeButton2, video2);
-    </script>
+    <!-- 图片部分 -->
     <img src="./stbag/share_ppt_exportpage15.png" alt="图片16">
-     <img src="./stbag/share_ppt_exportpage16.png" alt="图片17">
-     <img src="./stbag/share_ppt_exportpage17.png" alt="图片18">
-     <img src="./stbag/share_ppt_exportpage18.png" alt="图片19">
-     <img src="./stbag/share_ppt_exportpage19.png" alt="图片20">
+    <img src="./stbag/share_ppt_exportpage16.png" alt="图片17">
+    <img src="./stbag/share_ppt_exportpage17.png" alt="图片18">
+    <img src="./stbag/share_ppt_exportpage18.png" alt="图片19">
+    <img src="./stbag/share_ppt_exportpage19.png" alt="图片20">
     <img src="./stbag/share_ppt_exportpage20.png" alt="图片21">
-     <img src="./stbag/share_ppt_exportpage21.png" alt="图片22">
-    
+    <img src="./stbag/share_ppt_exportpage21.png" alt="图片22">
+
+    <script>
+        // 播放或暂停视频函数
+        function toggleVideo(videoId) {
+            var video = document.getElementById(videoId);
+            var cover = document.querySelector('.video-container .cover');
+            if (video.paused) {
+                video.play();
+                cover.style.display = 'none';
+            } else {
+                video.pause();
+                video.currentTime = 0;
+                cover.style.display = 'block';
+            }
+        }
+
+        // 为每个视频添加结束时的事件监听器
+        document.querySelectorAll('video').forEach(function(video) {
+            video.addEventListener('ended', function() {
+                var cover = document.querySelector('.video-container .cover');
+                cover.style.display = 'block';
+            });
+        });
+
+        // 添加关闭按钮
+        document.querySelectorAll('.video-container').forEach(function(container) {
+            var video = container.querySelector('video');
+            var closeButton = document.createElement('button');
+            closeButton.innerText = 'Close';
+            closeButton.style.position = 'absolute';
+            closeButton.style.top = '10px';
+            closeButton.style.right = '10px';
+            closeButton.style.zIndex = '10';
+            closeButton.onclick = function() {
+                var cover = container.querySelector('.cover');
+                if (!video.paused) {
+                    video.pause();
+                    video.currentTime = 0;
+                    cover.style.display = 'block';
+                } else {
+                    video.play();
+                    cover.style.display = 'none';
+                }
+            };
+            container.insertBefore(closeButton, video);
+        });
+    </script>
 </body>
 </html>
