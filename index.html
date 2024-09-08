@@ -41,14 +41,15 @@
 </head>
 <body>
     <!-- 图片部分 -->
-    <img src="./图片1/妈咪包扣图版本-私域链接_v0.3 noline_01.jpg" alt="图片1">
-    <img src="./图片1/妈咪包扣图版本-私域链接_v0.3 noline_02.jpg" alt="图片2">
-    <img src="./图片1/妈咪包扣图版本-私域链接_v0.3 noline_03.jpg" alt="图片3">
-    
+     <img src="./stbag/share_ppt_exportpage0.png" alt="图片1">
+     <img src="./stbag/share_ppt_exportpage1.png" alt="图片2">
+     <img src="./stbag/share_ppt_exportpage2.png" alt="图片3">
+     <img src="./stbag/share_ppt_exportpage3.png" alt="图片4">
+     <img src="./stbag/share_ppt_exportpage4.png" alt="图片5">
     <!-- 视频部分 -->
     <div class="video-container">
         <video id="myVideo" controls>
-            <source src="视频2.mp4" type="video/mp4">
+            <source src="视频1_compressed.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="cover" onclick="playVideo()">Open</div>
@@ -84,17 +85,62 @@
         closeButton.onclick = stopVideo;
         video.parentNode.insertBefore(closeButton, video);
     </script>
-     <img src="./图片1/妈咪包扣图版本-私域链接_v0.3 noline_04.jpg" alt="图片4">
-     <img src="./图片1/妈咪包扣图版本-私域链接_v0.3 noline_05.jpg" alt="图片5">
-     <img src="./图片1/妈咪包扣图版本-私域链接_v0.3 noline_06.jpg" alt="图片6">
-    <img src="./图片1/妈咪包扣图版本-私域链接_v0.3 noline_07.jpg" alt="图片7">
-    <img src="./图片1/妈咪包扣图版本-私域链接_v0.3 noline_08.jpg" alt="图片8">
-    <img src="./图片1/妈咪包扣图版本-私域链接_v0.3 noline_09.jpg" alt="图片9">
-    <img src="./图片1/妈咪包扣图版本-私域链接_v0.3 noline_10.jpg" alt="图片10">
-    <img src="./图片1/妈咪包扣图版本-私域链接_v0.3 noline_11.jpg" alt="图片11">
-    <img src="./图片1/妈咪包扣图版本-私域链接_v0.3 noline_12.jpg" alt="图片12">
-    <img src="./图片1/妈咪包扣图版本-私域链接_v0.3 noline_13.jpg" alt="图片13">
-    <img src="./图片1/妈咪包扣图版本-私域链接_v0.3 noline_14.jpg" alt="图片14">
-    <img src="./图片1/妈咪包扣图版本-私域链接_v0.3 noline_15.jpg" alt="图片15">
+ <img src="./stbag/share_ppt_exportpage5.png" alt="图片6">
+     <img src="./stbag/share_ppt_exportpage6.png" alt="图片7">
+     <img src="./stbag/share_ppt_exportpage7.png" alt="图片8">
+     <img src="./stbag/share_ppt_exportpage8.png" alt="图片9">
+     <img src="./stbag/share_ppt_exportpage9.png" alt="图片10">
+    <img src="./stbag/share_ppt_exportpage10.png" alt="图片11">
+     <img src="./stbag/share_ppt_exportpage11.png" alt="图片12">
+     <img src="./stbag/share_ppt_exportpage12.png" alt="图片13">
+     <img src="./stbag/share_ppt_exportpage13.png" alt="图片14">
+     <img src="./stbag/share_ppt_exportpage14.png" alt="图片15">
+ <!-- 视频部分 -->
+    <div class="video-container">
+        <video id="myVideo" controls>
+            <source src="视频2_compressed.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="cover" onclick="playVideo()">Open</div>
+    </div>
+
+    <script>
+        // 获取视频元素
+        var video = document.getElementById('myVideo');
+        // 播放视频函数
+        function playVideo() {
+            video.play();
+            // 视频开始播放时，隐藏封面
+            document.querySelector('.cover').style.display = 'none';
+        }
+        // 视频结束时重新显示封面
+        video.addEventListener('ended', function() {
+            document.querySelector('.cover').style.display = 'block';
+        });
+        // 视频关闭函数
+        function stopVideo() {
+            video.pause();
+            video.currentTime = 0;
+            // 视频停止播放时，显示封面
+            document.querySelector('.cover').style.display = 'block';
+        }
+        // 添加关闭按钮
+        var closeButton = document.createElement('button');
+        closeButton.innerText = 'Close';
+        closeButton.style.position = 'absolute';
+        closeButton.style.top = '10px';
+        closeButton.style.right = '10px';
+        closeButton.style.zIndex = '10';
+        closeButton.onclick = stopVideo;
+        video.parentNode.insertBefore(closeButton, video);
+    </script>
+    <img src="./stbag/share_ppt_exportpage15.png" alt="图片16">
+     <img src="./stbag/share_ppt_exportpage16.png" alt="图片17">
+     <img src="./stbag/share_ppt_exportpage17.png" alt="图片18">
+     <img src="./stbag/share_ppt_exportpage18.png" alt="图片19">
+     <img src="./stbag/share_ppt_exportpage19.png" alt="图片20">
+    <img src="./stbag/share_ppt_exportpage20.png" alt="图片21">
+     <img src="./stbag/share_ppt_exportpage21.png" alt="图片22">
+    
 </body>
 </html>
